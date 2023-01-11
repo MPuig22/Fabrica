@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,22 +20,22 @@ public class CollectObjects : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        
+            
         
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("tuerca"))
-        { 
-            brazos_txt.gameObject.SetActive(false);
-            Destroy(other.gameObject);
-            countBrazos++;
-            
-            if (Input.GetKeyDown(KeyCode.F))
+        if (other.CompareTag("tuerca"))
+        {
+            if (Input.GetKeyDown(KeyCode.E))
             {
-               
+                brazos_txt.gameObject.SetActive(false);
+                Destroy(other.gameObject);
+                countBrazos++;
             }
-            
         }
     }
 }

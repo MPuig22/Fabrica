@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 1154586115}
   - component: {fileID: 1154586114}
   - component: {fileID: 1154586113}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cylinder
   m_TagString: tuerca
   m_Icon: {fileID: 0}
@@ -368,6 +368,7 @@ GameObject:
   - component: {fileID: 1213379928}
   - component: {fileID: 1213379927}
   - component: {fileID: 1213379926}
+  - component: {fileID: 1213379929}
   m_Layer: 0
   m_Name: PlayerObj
   m_TagString: Untagged
@@ -503,6 +504,34 @@ MonoBehaviour:
   sensibilityMouse: 5
   playerCamera: {fileID: 1987391878}
   jumpForce: 4
+--- !u!114 &1213379929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213379921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c1856fc08dc1b24695b09c62e8d916b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 1987391877}
+  countBrazos: 0
+  haveAPickup: 0
+  rayCastRange: 2
+  brazoRobot:
+    serializedVersion: 2
+    m_Bits: 8
+  pantallaMicroones:
+    serializedVersion: 2
+    m_Bits: 0
+  CamesRobot:
+    serializedVersion: 2
+    m_Bits: 0
+  CaixaMicroones:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1240453903
 GameObject:
   m_ObjectHideFlags: 0
@@ -909,6 +938,7 @@ GameObject:
   - component: {fileID: 1987391877}
   - component: {fileID: 1987391876}
   - component: {fileID: 1987391879}
+  - component: {fileID: 1987391880}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1015,6 +1045,20 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &1987391880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987391875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb4a61279a192354d87dab493356970d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseSensiblity: 80
+  playerBody: {fileID: 1213379922}
 --- !u!1 &2026506907
 GameObject:
   m_ObjectHideFlags: 0
