@@ -7,11 +7,22 @@ public class CameraInteract : MonoBehaviour
 {
     public Camera playerCamera;
     public int countBrazos;
-    
-    [Header("Pickups Variables")] 
+    //objectos para destruir
+    public GameObject destruirBrazosRobot1;
+    public GameObject destruirBrazosRobot2;
+
+    //objetos para activar
+    public GameObject brazosFinal;
+
+
+    [Header("Pickups Variables")]
+    private GameObject pickup;
+    public Transform targetPoint;
     public bool haveAPickup;
     public float rayCastRange;
-    public LayerMask brazoRobot;
+    public LayerMask pickupMask;
+    public LayerMask pickupMask1;
+
     public LayerMask pantallaMicroones;
     public LayerMask CamesRobot;
     public LayerMask CaixaMicroones;
@@ -26,19 +37,49 @@ public class CameraInteract : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
-        { 
+        if(countBrazos == 2)
+        {
+            brazosFinal.gameObject.SetActive(true);
+        }
+
+
+
+        //Pulzar para poder recoger los brazos
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+
             if (!haveAPickup)
             {
+
                 RaycastHit hit;
-                if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, rayCastRange, brazoRobot))
+
+
+                if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, rayCastRange, pickupMask))
                 {
+                    haveAPickup = false;
                     countBrazos++;
+                    Destroy(destruirBrazosRobot1);
+
                 }
-            }
-            else
+            } 
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+
+            if (!haveAPickup)
             {
-                haveAPickup = false;
+
+                RaycastHit hit;
+
+
+                if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, rayCastRange, pickupMask1))
+                {
+                    haveAPickup = false;
+                    countBrazos++;
+                    Destroy(destruirBrazosRobot2);
+
+                }
             }
         }
     }
