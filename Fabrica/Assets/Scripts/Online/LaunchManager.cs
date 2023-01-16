@@ -7,11 +7,12 @@ public class LaunchManager : MonoBehaviourPunCallbacks
 {
     [SerializeField] private GameObject enterGamePanel;
     [SerializeField] private GameObject connectionStatusPanel;
-  
+    [SerializeField] private GameObject LobbyPanel;
     private void Start()
     {
         enterGamePanel.SetActive(true);
         connectionStatusPanel.SetActive(false);
+        LobbyPanel.SetActive(false);
     } 
     
     
@@ -34,6 +35,8 @@ public class LaunchManager : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         Debug.Log("Conectando a los servidores de Photon con el usuario " + PhotonNetwork.NickName );
+        connectionStatusPanel.SetActive(false);
+        LobbyPanel.SetActive(true);
     }
 
 // Called to signal that the raw connection got established but before the client can call operation on the server.
