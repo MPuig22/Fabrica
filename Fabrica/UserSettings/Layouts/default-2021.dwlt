@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -215,8 +215,8 @@ MonoBehaviour:
     y: 0
     width: 1196
     height: 485
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -401,9 +401,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: d2920000
-      m_LastClickedID: 37586
-      m_ExpandedIDs: 3292feff1ab1ffff1cb1ffffdab2ffff6ad0ffff00e1ffffb68b0000f28b00002c8c000066920000de920000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 0efbffff10fbffffca6c0000426d0000766d0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -686,9 +686,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -9.9477, y: -13.751746, z: -2.7373838}
+    m_Target: {x: 43.07026, y: -35.894863, z: 30.06896}
     speed: 2
-    m_Value: {x: -9.9477, y: -13.751746, z: -2.7373838}
+    m_Value: {x: 43.07026, y: -35.894863, z: 30.06896}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -735,13 +735,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.24664287, y: 0.7465353, z: -0.37450966, w: -0.4915635}
+    m_Target: {x: -0.29112035, y: -0.4494856, z: 0.1578025, w: -0.82968193}
     speed: 2
-    m_Value: {x: -0.24551336, y: 0.7479918, z: -0.37524047, w: -0.489312}
+    m_Value: {x: -0.2903366, y: -0.44721556, z: 0.15625286, w: -0.8314373}
   m_Size:
-    m_Target: 13.137292
+    m_Target: 35.656998
     speed: 2
-    m_Value: 12.571571
+    m_Value: 34.12153
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -808,22 +808,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Models
+    - Assets/Prefabs
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 80
   m_LastFolders:
-  - Assets/Models
+  - Assets/Prefabs
   m_LastFoldersGridSize: 80
   m_LastProjectPath: C:\Users\m.puig\Documents\GitHub\Fabrica\Fabrica
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 688e0000
-    m_LastClickedID: 36456
-    m_ExpandedIDs: 000000000e8e0000568e00005c8e00001c9b000000ca9a3b
+    m_SelectedIDs: 22700000
+    m_LastClickedID: 28706
+    m_ExpandedIDs: 00000000007000002670000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -851,7 +851,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000e8e0000
+    m_ExpandedIDs: 0000000000700000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

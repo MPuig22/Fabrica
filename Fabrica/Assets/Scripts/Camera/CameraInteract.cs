@@ -53,36 +53,39 @@ public class CameraInteract : MonoBehaviour
     public LayerMask pickupPlato;
 
 
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(countBrazos == 2)
+        if (countBrazos == 2)
         {
             brazosFinal.gameObject.SetActive(true);
             haveAPickup = true;
+            destruirPuerta.gameObject.SetActive(true);
         }
 
-        if(countPierna == 2)
+        if (countPierna == 2)
         {
             piernaFinal.gameObject.SetActive(true);
             haveAPickupPierna = true;
             destruirCaja.gameObject.SetActive(true);
         }
 
-        if(countCaja == 1)
+        if (countCaja == 1)
         {
             cajaFinal.gameObject.SetActive(true);
             haveAPickupCaja = true;
-            destruirPlato.gameObject.SetActive(true);       
+            destruirPlato.gameObject.SetActive(true);
         }
 
-        if(countPlato == 1)
+        if (countPlato == 1)
         {
             platoFinal.gameObject.SetActive(true);
             haveAPickupPlato = true;
@@ -91,7 +94,11 @@ public class CameraInteract : MonoBehaviour
 
         }
 
-
+        if (countPuerta == 1)
+        {
+            puertaFinal.gameObject.SetActive(true);
+            haveAPickupPuerta = true;
+        }
 
         //Pulzar para poder recoger los brazos
         if (Input.GetKeyDown(KeyCode.E))
@@ -101,7 +108,6 @@ public class CameraInteract : MonoBehaviour
             {
 
                 RaycastHit hit;
-
 
                 if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, rayCastRange, pickupMask))
                 {
@@ -116,26 +122,20 @@ public class CameraInteract : MonoBehaviour
                     countBrazos++;
                     Destroy(destruirBrazosRobot2);
                 }
-            } 
-        }
 
+            }
 
-        // pulsar para poder recoger las piernas
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-
+            // pulsar para poder recoger las piernas
             if (!haveAPickupPierna)
             {
 
                 RaycastHit hit;
-
 
                 if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, rayCastRange, pickupPierna))
                 {
                     haveAPickupPierna = false;
                     countPierna++;
                     Destroy(destruirPierna1);
-
                 }
 
                 if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, rayCastRange, pickupPierna1))
@@ -143,55 +143,50 @@ public class CameraInteract : MonoBehaviour
                     haveAPickupPierna = false;
                     countPierna++;
                     Destroy(destruirPierna2);
-
                 }
-            } 
-        }
+            }
 
-        // pulsar para poder recoger la caja
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-
+            // pulsar para poder recoger la caja
             if (!haveAPickupCaja)
             {
 
                 RaycastHit hit;
-
 
                 if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, rayCastRange, CaixaMicroones))
                 {
                     haveAPickupCaja = false;
                     countCaja++;
                     Destroy(destruirCaja);
-
-                }        
+                }
             }
-        }
 
-        // pulsar para poder recoger la plato
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-
+            // pulsar para poder recoger la plato
             if (!haveAPickupPlato)
             {
 
                 RaycastHit hit;
-
 
                 if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, rayCastRange, pickupPlato))
                 {
                     haveAPickupPlato = false;
                     countPlato++;
                     Destroy(destruirPlato);
+                }
+            }
 
+            // pulsar para poder recoger la puerta
+            if (!haveAPickupPuerta)
+            {
+
+                RaycastHit hit;
+
+                if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, rayCastRange, puertaMicroones))
+                {
+                    haveAPickupPuerta = false;
+                    countPuerta++;
+                    Destroy(destruirPuerta);
                 }
             }
         }
-
     }
-
-
-    
-
-
 }

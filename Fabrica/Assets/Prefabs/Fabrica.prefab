@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3112969296078432216}
   - component: {fileID: 8782776596616006149}
   - component: {fileID: 7406533073504417344}
+  - component: {fileID: 6693372887134033485}
   m_Layer: 0
   m_Name: BarandillaEscalera
   m_TagString: Untagged
@@ -83,6 +84,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6693372887134033485
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101595483570707104}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2395260602012661536, guid: 28480b93f4d8f714a8d9ff97b6b31b0b, type: 3}
 --- !u!1 &1203421046816059463
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,7 +111,7 @@ GameObject:
   - component: {fileID: 7846347415136547786}
   m_Layer: 0
   m_Name: Fabrica
-  m_TagString: Untagged
+  m_TagString: terra
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,7 +159,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7832613537997616588, guid: 28480b93f4d8f714a8d9ff97b6b31b0b, type: 3}
+  - {fileID: 2100000, guid: c9931cf40ac607c409a00e36e3be65cd, type: 2}
   - {fileID: -3437194871006262605, guid: 28480b93f4d8f714a8d9ff97b6b31b0b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -178,6 +193,8 @@ GameObject:
   - component: {fileID: 4941971073653577056}
   - component: {fileID: 1203222702770062722}
   - component: {fileID: 1984946477651795670}
+  - component: {fileID: 7031380589661063466}
+  - component: {fileID: 7031380589661063467}
   m_Layer: 0
   m_Name: Barandillas
   m_TagString: Untagged
@@ -250,6 +267,32 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7031380589661063466
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841717211630458978}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0031928872, y: 0.389387, z: 0.017100165}
+  m_Center: {x: 0.056062784, y: -0.015270444, z: 0.075715385}
+--- !u!65 &7031380589661063467
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841717211630458978}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.003170781, y: 0.389387, z: 0.017100165}
+  m_Center: {x: -0.05607393, y: -0.015270444, z: 0.075715385}
 --- !u!1 &3008538914919386701
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,6 +303,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2489270791515264247}
   - component: {fileID: -955988462989391333}
+  - component: {fileID: 919132147686969862}
+  - component: {fileID: 919132147686969863}
+  - component: {fileID: 919132147686969864}
+  - component: {fileID: 919132147686969865}
   m_Layer: 0
   m_Name: Fabrica
   m_TagString: Untagged
@@ -301,6 +348,58 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 22.694916, y: 0.48764265, z: 43.17003}
   m_Center: {x: -0.13069153, y: -0.25617868, z: -0.087127686}
+--- !u!65 &919132147686969862
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3008538914919386701}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 22.443584, y: 20.020252, z: 0.7835846}
+  m_Center: {x: -0.08091879, y: 9.510126, z: -21.490334}
+--- !u!65 &919132147686969863
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3008538914919386701}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 22.322208, y: 20.046026, z: 1.4873734}
+  m_Center: {x: -0.060689926, y: 9.523015, z: 21.763733}
+--- !u!65 &919132147686969864
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3008538914919386701}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.49797058, y: 15.376305, z: 42.575565}
+  m_Center: {x: 10.930555, y: 7.1881523, z: 0.06801033}
+--- !u!65 &919132147686969865
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3008538914919386701}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6454258, y: 15.372821, z: 42.58143}
+  m_Center: {x: -10.9754095, y: 7.1864104, z: 0.10341644}
 --- !u!1 &5111227958649061452
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,9 +411,10 @@ GameObject:
   - component: {fileID: 5066790669197104307}
   - component: {fileID: 3863165363982455768}
   - component: {fileID: 6222792327111843555}
+  - component: {fileID: 8312201542475481771}
   m_Layer: 0
   m_Name: Escaleras
-  m_TagString: Untagged
+  m_TagString: terra
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -384,6 +484,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8312201542475481771
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5111227958649061452}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1800243146424748348, guid: 28480b93f4d8f714a8d9ff97b6b31b0b, type: 3}
 --- !u!1 &7291016304059850417
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,6 +509,7 @@ GameObject:
   - component: {fileID: 9096333003050744758}
   - component: {fileID: 2886246640522034963}
   - component: {fileID: 6472705797885723974}
+  - component: {fileID: 8994454010469849360}
   m_Layer: 0
   m_Name: Bigas
   m_TagString: Untagged
@@ -467,6 +582,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8994454010469849360
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7291016304059850417}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7163524557887635168, guid: 28480b93f4d8f714a8d9ff97b6b31b0b, type: 3}
 --- !u!1 &9114716072865287487
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,6 +607,7 @@ GameObject:
   - component: {fileID: 767562978023943601}
   - component: {fileID: 6847791067826978390}
   - component: {fileID: 5351423270155642385}
+  - component: {fileID: 8793610687438447136}
   m_Layer: 0
   m_Name: Puerta
   m_TagString: Untagged
@@ -550,3 +680,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8793610687438447136
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9114716072865287487}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.06523766, y: 0.00317575, z: 0.057727993}
+  m_Center: {x: 0, y: -0.20841493, z: 0.029067222}
