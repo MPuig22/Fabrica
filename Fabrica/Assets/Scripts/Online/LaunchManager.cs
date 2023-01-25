@@ -1,13 +1,35 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Photon.Realtime;
+using TMPro;
+using UnityEngine.SceneManagement;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
+using Random = UnityEngine.Random;
 
 public class LaunchManager : MonoBehaviourPunCallbacks
 {
+    [Header("--- Panels ---"), Space(10)]
     [SerializeField] private GameObject enterGamePanel;
     [SerializeField] private GameObject connectionStatusPanel;
+    [SerializeField] private GameObject panel_createOrJoinRoom;
     [SerializeField] private GameObject LobbyPanel;
+
+    [SerializeField] private List<GameObject> panel_list = new List<GameObject>();
+
+    [Header("--- Objects Panel Enter Game ---"), Space(10)]
+    [SerializeField] private TMP_InputField playerName_inputfield;
+
+    [Header("--- Objects Panel Loby ---"), Space(10)]
+    [SerializeField] private TextMeshProUGUI usuarios_conectados_info_txt;
+    [SerializeField] private GameObject content_ListaUsuarios_conectados;
+ 
+
+
+
+
     private void Start()
     {
         enterGamePanel.SetActive(true);

@@ -64,42 +64,7 @@ public class CameraInteract : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (countBrazos == 2)
-        {
-            brazosFinal.gameObject.SetActive(true);
-            haveAPickup = true;
-            destruirPuerta.gameObject.SetActive(true);
-        }
-
-        if (countPierna == 2)
-        {
-            piernaFinal.gameObject.SetActive(true);
-            haveAPickupPierna = true;
-            destruirCaja.gameObject.SetActive(true);
-        }
-
-        if (countCaja == 1)
-        {
-            cajaFinal.gameObject.SetActive(true);
-            haveAPickupCaja = true;
-            destruirPlato.gameObject.SetActive(true);
-        }
-
-        if (countPlato == 1)
-        {
-            platoFinal.gameObject.SetActive(true);
-            haveAPickupPlato = true;
-            destruirBrazosRobot2.gameObject.SetActive(true);
-            destruirBrazosRobot1.gameObject.SetActive(true);
-
-        }
-
-        if (countPuerta == 1)
-        {
-            puertaFinal.gameObject.SetActive(true);
-            haveAPickupPuerta = true;
-        }
-
+       
         //Pulzar para poder recoger los brazos
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -113,14 +78,15 @@ public class CameraInteract : MonoBehaviour
                 {
                     haveAPickup = false;
                     countBrazos++;
-                    Destroy(destruirBrazosRobot1);
+                    destruirBrazosRobot1.gameObject.SetActive(false);
+
                 }
 
                 if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, rayCastRange, pickupMask1))
                 {
                     haveAPickup = false;
                     countBrazos++;
-                    Destroy(destruirBrazosRobot2);
+                    destruirBrazosRobot2.gameObject.SetActive(false);
                 }
 
             }
@@ -135,14 +101,14 @@ public class CameraInteract : MonoBehaviour
                 {
                     haveAPickupPierna = false;
                     countPierna++;
-                    Destroy(destruirPierna1);
+                    destruirPierna1.gameObject.SetActive(false);
                 }
 
                 if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, rayCastRange, pickupPierna1))
                 {
                     haveAPickupPierna = false;
                     countPierna++;
-                    Destroy(destruirPierna2);
+                    destruirPierna2.gameObject.SetActive(false);
                 }
             }
 
@@ -156,7 +122,7 @@ public class CameraInteract : MonoBehaviour
                 {
                     haveAPickupCaja = false;
                     countCaja++;
-                    Destroy(destruirCaja);
+                    destruirCaja.gameObject.SetActive(false);
                 }
             }
 
@@ -170,7 +136,7 @@ public class CameraInteract : MonoBehaviour
                 {
                     haveAPickupPlato = false;
                     countPlato++;
-                    Destroy(destruirPlato);
+                    destruirPlato.gameObject.SetActive(false);
                 }
             }
 
@@ -184,9 +150,46 @@ public class CameraInteract : MonoBehaviour
                 {
                     haveAPickupPuerta = false;
                     countPuerta++;
-                    Destroy(destruirPuerta);
+                    destruirPuerta.gameObject.SetActive(false);
                 }
             }
         }
+
+        if (countBrazos == 2)
+        {
+            brazosFinal.gameObject.SetActive(true);
+            haveAPickup = true;
+            //destruirPuerta.gameObject.SetActive(true);
+        }
+
+        if (countPierna == 2)
+        {
+            piernaFinal.gameObject.SetActive(true);
+            haveAPickupPierna = true;
+           // destruirCaja.gameObject.SetActive(true);
+        }
+
+        if (countCaja == 1)
+        {
+            cajaFinal.gameObject.SetActive(true);
+            haveAPickupCaja = true;
+            //destruirPlato.gameObject.SetActive(true);
+        }
+
+        if (countPlato == 1)
+        {
+            platoFinal.gameObject.SetActive(true);
+            haveAPickupPlato = true;
+           // destruirBrazosRobot2.gameObject.SetActive(true);
+           // destruirBrazosRobot1.gameObject.SetActive(true);
+
+        }
+
+        if (countPuerta == 1)
+        {
+            puertaFinal.gameObject.SetActive(true);
+            haveAPickupPuerta = true;
+        }
+
     }
 }
