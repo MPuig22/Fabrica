@@ -1,6 +1,7 @@
 using System.Collections;
 using System;
 using System.Collections.Generic;
+//using EasyUI.Toast;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
@@ -30,8 +31,12 @@ public class LaunchManager : MonoBehaviourPunCallbacks
     [SerializeField] private GameObject startGame_btn;
 
     // private variables
-    private int currentIndexListSkin;
+    private int currentIndexListSkins;
     private int lengthArraySkins;
+
+
+
+
 
     private void Awake()
     {
@@ -42,8 +47,7 @@ public class LaunchManager : MonoBehaviourPunCallbacks
     {
         OcultarTodosLosPaneles();
         enterGamePanel.SetActive(true);
-        
-        
+        lengthArraySkins = GameManager.instance.ArraySkins.Length;
     } 
     
    [PunRPC]
@@ -60,7 +64,7 @@ public class LaunchManager : MonoBehaviourPunCallbacks
             itemListaUsuariosConectados.name = player.NickName;
         }
 
-       // usuarios_conectados_info_txt = $"Usuarios conectados {PhotonNetwork.CurrentRoom.PlayerCount}/{PhotonNetwork.CurrentRoom.MaxPlayers}";
+        usuarios_conectados_info_txt.text = $"Usuarios conectados {PhotonNetwork.CurrentRoom.PlayerCount}/{PhotonNetwork.CurrentRoom.MaxPlayers}";
 
         if ((PhotonNetwork.CurrentRoom.PlayerCount == PhotonNetwork.CurrentRoom.MaxPlayers) && PhotonNetwork.IsMasterClient)
         {
@@ -83,17 +87,87 @@ public class LaunchManager : MonoBehaviourPunCallbacks
     }
 
 
+    public void NextSkin()
+    {
+        // Recorremos toda la lista de usuarios capturados del JSON y creamos un botón en la UI por cada uno.
+        foreach (var player in PhotonNetwork.PlayerList)
+        {
+            if (player.Equals(PhotonNetwork.LocalPlayer))
+            {
+                currentIndexListSkins = (currentIndexListSkins + 1) % lengthArraySkins;
+                playerUIRenderer.material = GameManager.instance.ArraySkins[currentIndexListSkins];
 
+                // Seteamos la propiedad del player para indicar el skin seleccionado
+                player.CustomProperties["skinIndex"] = currentIndexListSkins;
+                GameManager.instance.SelectedSkinPlayer = GameManager.instance.ArrayAvailableSkinsPlayers[currentIndexListSkins];
+            }
+        }
+    }
+
+    public void BackSkin()
+    {
+        // Recorremos toda la lista de usuarios capturados del JSON y creamos un botón en la UI por cada uno.
+        foreach (var player in PhotonNetwork.PlayerList)
+        {
+            if (player.Equals(PhotonNetwork.LocalPlayer))
+            {
+                if (currentIndexListSkins - 1 < 0)
+                {
+                    currentIndexListSkins = lengthArraySkins - 1;
+                }
+                else
+                {
+                    currentIndexListSkins--;
+                }
+
+                playerUIRenderer.material = GameManager.instance.ArraySkins[currentIndexListSkins];
+
+                // Seteamos la propiedad del player para indicar el skin seleccionado
+                player.CustomProperties["skinIndex"] = currentIndexListSkins;
+                GameManager.instance.SelectedSkinPlayer = GameManager.instance.ArrayAvailableSkinsPlayers[currentIndexListSkins];
+            }
+        }
+    }
+
+    /// <summary>
+    /// Método de ejemplo para tratar tratar las propiedades de un jugador y mostrarlas por LOG
+    /// </summary>
+    public void LogCustomProperties()
+    {
+        foreach (var player in PhotonNetwork.PlayerList)
+        {
+            if (player.CustomProperties.ContainsKey("skinIndex"))
+            {
+                object skinValue;
+                if (player.CustomProperties.TryGetValue("skinIndex", out skinValue))
+                {
+                    Debug.Log(skinValue.ToString());
+                }
+            }
+            else
+            {
+                Debug.Log("No existe la propiedad");
+            }
+        }
+    }
 
 
     public void ConnectToPhotonServer()
     {
-        if (!PhotonNetwork.IsConnected)
-        {
+      //verificamos que nuestro input field tenga texto
+      if (string.IsNullOrEmpty(playerName_inputfield.text))
+      {
+          // Toast.Show("Necesitas introducir datos");
+      }
+      else
+      {
+            // cambiamos el nickname de photonNetwork por el valor de texto del input field
+            PhotonNetwork.NickName = playerName_inputfield.text;
             PhotonNetwork.ConnectUsingSettings();
-            enterGamePanel.SetActive(false);
+            // Mostramos al usuario el siguiente panel despues de establecer la conexión
+            OcultarTodosLosPaneles();
             connectionStatusPanel.SetActive(true);
-        }
+      }
     }
 
     // Metodo que trata de conectar al usuario a una Room aleatoria, en caso de no existir llaremos al metodo override OnJoinRandomRoomFiled
@@ -113,20 +187,16 @@ public class LaunchManager : MonoBehaviourPunCallbacks
 
         PhotonNetwork.CreateRoom(randomRoomName, roomOptions);
     }
-    
-    // Update is called once per frame
-    void Update()
-    {
-    }
-    // Called when the client is connected to the Master Server and ready for matchmaking and other tasks.
+
+    #region Override Photon
+
     public override void OnConnectedToMaster()
     {
-        Debug.Log("Conectando a los servidores de Photon con el usuario " + PhotonNetwork.NickName );
-        connectionStatusPanel.SetActive(false);
-        lobbyRoomPanel.SetActive(true);
+        Debug.Log("Conectando a los servidores de Photon con el usuario " + PhotonNetwork.NickName + " " + PhotonNetwork.LocalPlayer.NickName);
+        OcultarTodosLosPaneles();
+        panel_createOrJoinRoom.SetActive(true);
     }
 
-    // Called to signal that the raw connection got established but before the client can call operation on the server.
     public override void OnConnected()
     {
         Debug.Log("Conectando a Internet");
@@ -140,8 +210,13 @@ public class LaunchManager : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        Debug.Log(PhotonNetwork.NickName + "se ha conectado a" + PhotonNetwork.CurrentRoom.Name);
+        Debug.Log(PhotonNetwork.NickName + "se ha conectado a " + PhotonNetwork.CurrentRoom.Name);
 
+        // Creamos la propiedad skinIndex para el player que se acaba de conectar para luego poder actualizarla
+        // ya que indicara que skin ha escogido para ir al juego
+        Hashtable player_skin_propertie = new Hashtable();
+        player_skin_propertie.Add("skinIndex", 0);
+        PhotonNetwork.LocalPlayer.CustomProperties = player_skin_propertie;
 
         lobbyRoomPanel.SetActive(true);
         photonView.RPC("Actualizar_Lista_Usuarios", RpcTarget.All);
@@ -153,7 +228,9 @@ public class LaunchManager : MonoBehaviourPunCallbacks
         Debug.Log("Numero de players: " + PhotonNetwork.CurrentRoom.PlayerCount);
     }
 
-    //#endregion
+    #endregion
+
+    
 
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
@@ -182,9 +259,4 @@ public class LaunchManager : MonoBehaviourPunCallbacks
             panel.SetActive(false);
         }
     }
-
-
-
-
-
 }
