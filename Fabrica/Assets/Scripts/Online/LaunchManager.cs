@@ -1,7 +1,7 @@
 using System.Collections;
 using System;
 using System.Collections.Generic;
-//using EasyUI.Toast;
+using EasyUI.Toast;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
@@ -157,7 +157,7 @@ public class LaunchManager : MonoBehaviourPunCallbacks
       //verificamos que nuestro input field tenga texto
       if (string.IsNullOrEmpty(playerName_inputfield.text))
       {
-          // Toast.Show("Necesitas introducir datos");
+          Toast.Show("Necesitas introducir datos");
       }
       else
       {
