@@ -3,32 +3,33 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 using Photon.Pun;
+
 public class CameraInteract : MonoBehaviourPunCallbacks
 {
     public Camera playerCamera;
 
-    [Space]
-    [Header("Contador Objeto Master")]
+    [Space] [Header("Contador Objeto Master")]
     //Contador de cada objeto
     public int countBrazos;
+
     public int countPierna;
     public int countPlato;
     public int countCaja;
     public int countPuerta;
 
-    [Space]
-    [Header("Contador Objeto Client")]
+    [Space] [Header("Contador Objeto Client")]
     //Contador de cada objeto
     public int countBrazos_Client;
+
     public int countPierna_Client;
     public int countPlato_Client;
     public int countCaja_Client;
     public int countPuerta_Client;
 
-    [Space]
-    [Header("Objetos destruir Master")]
+    [Space] [Header("Objetos destruir Master")]
     //objectos para destruir
     public GameObject destruirBrazosRobot1;
+
     public GameObject destruirBrazosRobot2;
     public GameObject destruirPierna1;
     public GameObject destruirPierna2;
@@ -36,10 +37,10 @@ public class CameraInteract : MonoBehaviourPunCallbacks
     public GameObject destruirCaja;
     public GameObject destruirPuerta;
 
-    [Space]
-    [Header("Objetos destruir Client")]
+    [Space] [Header("Objetos destruir Client")]
     //objectos para destruir
     public GameObject destruirBrazosRobot1_Client;
+
     public GameObject destruirBrazosRobot2_Client;
     public GameObject destruirPierna1_Client;
     public GameObject destruirPierna2_Client;
@@ -47,42 +48,40 @@ public class CameraInteract : MonoBehaviourPunCallbacks
     public GameObject destruirCaja_Client;
     public GameObject destruirPuerta_Client;
 
-    [Space]
-    [Header("Objetos final Master")]
+    [Space] [Header("Objetos final Master")]
     //objetos para activar
     public GameObject brazosFinal;
+
     public GameObject piernaFinal;
     public GameObject platoFinal;
     public GameObject cajaFinal;
     public GameObject puertaFinal;
 
-    [Space]
-    [Header("Objetos final Client")]
+    [Space] [Header("Objetos final Client")]
     //objetos para activar
     public GameObject brazosFinal_Client;
+
     public GameObject piernaFinal_Client;
     public GameObject platoFinal_Client;
     public GameObject cajaFinal_Client;
     public GameObject puertaFinal_Client;
 
-    [Space]
-    [Header("Pickups Variables")]
-    private GameObject pickup;
+    [Space] [Header("Pickups Variables")] private GameObject pickup;
     public Transform targetPoint;
 
-    [Space]
-    [Header("Pickups bools Master")]
+    [Space] [Header("Pickups bools Master")]
     //Bools para saber si se pueden agarrar los objetos
     public bool haveAPickup;
+
     public bool haveAPickupPierna;
     public bool haveAPickupPlato;
     public bool haveAPickupCaja;
     public bool haveAPickupPuerta;
 
-    [Space]
-    [Header("Pickups bools Client")]
+    [Space] [Header("Pickups bools Client")]
     //Bools para saber si se pueden agarrar los objetos
     public bool haveAPickup_Client;
+
     public bool haveAPickupPierna_Client;
     public bool haveAPickupPlato_Client;
     public bool haveAPickupCaja_Client;
@@ -90,20 +89,20 @@ public class CameraInteract : MonoBehaviourPunCallbacks
 
     public float rayCastRange;
 
-    [Space]
-    [Header("LayerMascs Master")]
+    [Space] [Header("LayerMascs Master")]
     // layers para saber que objeto es que (Master)
     public LayerMask pickupMask;
+
     public LayerMask pickupPierna;
     public LayerMask puertaMicroones;
     public LayerMask CaixaMicroones;
     public LayerMask pickupPlato;
 
 
-    [Space]
-    [Header("LayerMascs Client")]
+    [Space] [Header("LayerMascs Client")]
     // layers para saber que objeto es que (Client)
     public LayerMask pickupBrazo_1;
+
     public LayerMask pickupPierna_1;
     public LayerMask puertaMicroones_1;
     public LayerMask CaixaMicroones_1;
@@ -120,7 +119,7 @@ public class CameraInteract : MonoBehaviourPunCallbacks
     // Update is called once per frame
     void Update()
     {
-       
+
         //Pulzar para poder recoger los brazos
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -133,7 +132,8 @@ public class CameraInteract : MonoBehaviourPunCallbacks
 
                     RaycastHit hit;
 
-                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, rayCastRange, pickupMask))
+                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit,
+                            rayCastRange, pickupMask))
                     {
                         haveAPickup = false;
                         countBrazos++;
@@ -141,7 +141,8 @@ public class CameraInteract : MonoBehaviourPunCallbacks
 
                     }
 
-                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, rayCastRange, pickupMask))
+                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit,
+                            rayCastRange, pickupMask))
                     {
                         haveAPickup = false;
                         countBrazos++;
@@ -156,14 +157,16 @@ public class CameraInteract : MonoBehaviourPunCallbacks
 
                     RaycastHit hit;
 
-                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, rayCastRange, pickupPierna))
+                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit,
+                            rayCastRange, pickupPierna))
                     {
                         haveAPickupPierna = false;
                         countPierna++;
                         destruirPierna1.gameObject.SetActive(false);
                     }
 
-                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, rayCastRange, pickupPierna))
+                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit,
+                            rayCastRange, pickupPierna))
                     {
                         haveAPickupPierna = false;
                         countPierna++;
@@ -177,7 +180,8 @@ public class CameraInteract : MonoBehaviourPunCallbacks
 
                     RaycastHit hit;
 
-                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, rayCastRange, CaixaMicroones))
+                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit,
+                            rayCastRange, CaixaMicroones))
                     {
                         haveAPickupCaja = false;
                         countCaja++;
@@ -191,7 +195,8 @@ public class CameraInteract : MonoBehaviourPunCallbacks
 
                     RaycastHit hit;
 
-                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, rayCastRange, pickupPlato))
+                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit,
+                            rayCastRange, pickupPlato))
                     {
                         haveAPickupPlato = false;
                         countPlato++;
@@ -205,7 +210,8 @@ public class CameraInteract : MonoBehaviourPunCallbacks
 
                     RaycastHit hit;
 
-                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, rayCastRange, puertaMicroones))
+                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit,
+                            rayCastRange, puertaMicroones))
                     {
                         haveAPickupPuerta = false;
                         countPuerta++;
@@ -214,14 +220,16 @@ public class CameraInteract : MonoBehaviourPunCallbacks
                 }
 
 
-            } else
+            }
+            else
             {
                 if (!haveAPickup_Client)
                 {
 
                     RaycastHit hit;
 
-                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, rayCastRange, pickupBrazo_1))
+                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit,
+                            rayCastRange, pickupBrazo_1))
                     {
                         haveAPickup_Client = false;
                         countBrazos_Client++;
@@ -229,7 +237,8 @@ public class CameraInteract : MonoBehaviourPunCallbacks
 
                     }
 
-                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, rayCastRange, pickupBrazo_1))
+                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit,
+                            rayCastRange, pickupBrazo_1))
                     {
                         haveAPickup_Client = false;
                         countBrazos_Client++;
@@ -244,14 +253,16 @@ public class CameraInteract : MonoBehaviourPunCallbacks
 
                     RaycastHit hit;
 
-                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, rayCastRange, pickupPierna_1))
+                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit,
+                            rayCastRange, pickupPierna_1))
                     {
                         haveAPickupPierna_Client = false;
                         countPierna_Client++;
                         destruirPierna1_Client.gameObject.SetActive(false);
                     }
 
-                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, rayCastRange, pickupPierna_1))
+                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit,
+                            rayCastRange, pickupPierna_1))
                     {
                         haveAPickupPierna_Client = false;
                         countPierna_Client++;
@@ -265,7 +276,8 @@ public class CameraInteract : MonoBehaviourPunCallbacks
 
                     RaycastHit hit;
 
-                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, rayCastRange, CaixaMicroones_1))
+                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit,
+                            rayCastRange, CaixaMicroones_1))
                     {
                         haveAPickupCaja_Client = false;
                         countCaja_Client++;
@@ -279,7 +291,8 @@ public class CameraInteract : MonoBehaviourPunCallbacks
 
                     RaycastHit hit;
 
-                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, rayCastRange, pickupPlato_1))
+                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit,
+                            rayCastRange, pickupPlato_1))
                     {
                         haveAPickupPlato_Client = false;
                         countPlato_Client++;
@@ -293,7 +306,8 @@ public class CameraInteract : MonoBehaviourPunCallbacks
 
                     RaycastHit hit;
 
-                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, rayCastRange, puertaMicroones_1))
+                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit,
+                            rayCastRange, puertaMicroones_1))
                     {
                         haveAPickupPuerta_Client = false;
                         countPlato_Client++;
@@ -302,13 +316,13 @@ public class CameraInteract : MonoBehaviourPunCallbacks
                 }
             }
 
-            
+
         }
 
-       
+
     }
 
-    public void OnTriggerEnter(Collision other)
+    public void OnTriggerEnter(Collider other)
     {
         if (PhotonNetwork.IsMasterClient)
         {
@@ -362,39 +376,36 @@ public class CameraInteract : MonoBehaviourPunCallbacks
                     haveAPickup_Client = true;
                 }
 
-                // T'HAS QUEDAT AQUI!!!
-
-                if (countPierna == 2)
+                if (countPierna_Client == 2)
                 {
-                    piernaFinal.gameObject.SetActive(true);
-                    haveAPickupPierna = true;
+                    piernaFinal_Client.gameObject.SetActive(true);
+                    haveAPickupPierna_Client = true;
                     // destruirCaja.gameObject.SetActive(true);
                 }
 
-                if (countCaja == 1)
+                if (countCaja_Client == 1)
                 {
-                    cajaFinal.gameObject.SetActive(true);
-                    haveAPickupCaja = true;
+                    cajaFinal_Client.gameObject.SetActive(true);
+                    haveAPickupCaja_Client = true;
                     //destruirPlato.gameObject.SetActive(true);
                 }
 
-                if (countPlato == 1)
+                if (countPlato_Client == 1)
                 {
-                    platoFinal.gameObject.SetActive(true);
-                    haveAPickupPlato = true;
+                    platoFinal_Client.gameObject.SetActive(true);
+                    haveAPickupPlato_Client = true;
                     // destruirBrazosRobot2.gameObject.SetActive(true);
                     // destruirBrazosRobot1.gameObject.SetActive(true);
 
                 }
 
-                if (countPuerta == 1)
+                if (countPuerta_Client == 1)
                 {
-                    puertaFinal.gameObject.SetActive(true);
-                    haveAPickupPuerta = true;
+                    puertaFinal_Client.gameObject.SetActive(true);
+                    haveAPickupPuerta_Client = true;
                 }
             }
+        }
+
     }
-
-
-
-}
+}    
