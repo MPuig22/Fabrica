@@ -27,12 +27,11 @@ public class LaunchManager : MonoBehaviourPunCallbacks
     [SerializeField] private TextMeshProUGUI usuarios_conectados_info_txt;
     [SerializeField] private GameObject content_ListaUsuarios_conectados;
     [SerializeField] private Item_info_UsuarioConectado _item_Info_UsuarioConectado;
-    [SerializeField] private MeshRenderer playerUIRenderer;
+    
     [SerializeField] private GameObject startGame_btn;
 
     // private variables
-    private int currentIndexListSkins;
-    private int lengthArraySkins;
+   
 
 
 
@@ -47,7 +46,7 @@ public class LaunchManager : MonoBehaviourPunCallbacks
     {
         OcultarTodosLosPaneles();
         enterGamePanel.SetActive(true);
-        lengthArraySkins = GameManager.instance.ArraySkins.Length;
+        
     } 
     
    [PunRPC]
@@ -85,72 +84,8 @@ public class LaunchManager : MonoBehaviourPunCallbacks
             Destroy(child.gameObject);
         }
     }
-
-
-    public void NextSkin()
-    {
-        // Recorremos toda la lista de usuarios capturados del JSON y creamos un botón en la UI por cada uno.
-        foreach (var player in PhotonNetwork.PlayerList)
-        {
-            if (player.Equals(PhotonNetwork.LocalPlayer))
-            {
-                currentIndexListSkins = (currentIndexListSkins + 1) % lengthArraySkins;
-                playerUIRenderer.material = GameManager.instance.ArraySkins[currentIndexListSkins];
-
-                // Seteamos la propiedad del player para indicar el skin seleccionado
-                player.CustomProperties["skinIndex"] = currentIndexListSkins;
-                GameManager.instance.SelectedSkinPlayer = GameManager.instance.ArrayAvailableSkinsPlayers[currentIndexListSkins];
-            }
-        }
-    }
-
-    public void BackSkin()
-    {
-        // Recorremos toda la lista de usuarios capturados del JSON y creamos un botón en la UI por cada uno.
-        foreach (var player in PhotonNetwork.PlayerList)
-        {
-            if (player.Equals(PhotonNetwork.LocalPlayer))
-            {
-                if (currentIndexListSkins - 1 < 0)
-                {
-                    currentIndexListSkins = lengthArraySkins - 1;
-                }
-                else
-                {
-                    currentIndexListSkins--;
-                }
-
-                playerUIRenderer.material = GameManager.instance.ArraySkins[currentIndexListSkins];
-
-                // Seteamos la propiedad del player para indicar el skin seleccionado
-                player.CustomProperties["skinIndex"] = currentIndexListSkins;
-                GameManager.instance.SelectedSkinPlayer = GameManager.instance.ArrayAvailableSkinsPlayers[currentIndexListSkins];
-            }
-        }
-    }
-
-    /// <summary>
-    /// Método de ejemplo para tratar tratar las propiedades de un jugador y mostrarlas por LOG
-    /// </summary>
-    public void LogCustomProperties()
-    {
-        foreach (var player in PhotonNetwork.PlayerList)
-        {
-            if (player.CustomProperties.ContainsKey("skinIndex"))
-            {
-                object skinValue;
-                if (player.CustomProperties.TryGetValue("skinIndex", out skinValue))
-                {
-                    Debug.Log(skinValue.ToString());
-                }
-            }
-            else
-            {
-                Debug.Log("No existe la propiedad");
-            }
-        }
-    }
-
+    
+    
 
     public void ConnectToPhotonServer()
     {
@@ -164,7 +99,7 @@ public class LaunchManager : MonoBehaviourPunCallbacks
             // cambiamos el nickname de photonNetwork por el valor de texto del input field
             PhotonNetwork.NickName = playerName_inputfield.text;
             PhotonNetwork.ConnectUsingSettings();
-            // Mostramos al usuario el siguiente panel despues de establecer la conexión
+            // Mostramos al usuario el siguiente panel despues de establecer la conexiï¿½n
             OcultarTodosLosPaneles();
             connectionStatusPanel.SetActive(true);
       }
