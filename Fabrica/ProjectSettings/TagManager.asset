@@ -8,6 +8,7 @@ TagManager:
   - tuerca
   - PlataformaMaster
   - PlataformaClient
+  - DestruirBrazosRobot1
   layers:
   - Default
   - TransparentFX

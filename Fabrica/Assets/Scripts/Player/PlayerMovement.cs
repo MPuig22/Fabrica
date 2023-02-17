@@ -20,6 +20,9 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     private bool isRunning;
 
+    private Animator anim;
+    public float X, Y;
+
    
     // Start is called before the first frame update
     void Start()
@@ -27,7 +30,9 @@ public class PlayerMovement : MonoBehaviour
         // Recuperamos el componente Rigidbody del player para poder trabajar con el
         _rigidbody = GetComponent<Rigidbody>();
 
-       
+        anim = GetComponent<Animator>();
+
+        
 
     }
 
@@ -35,11 +40,14 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         // Leemos los inputs para el desplazamiento del jugador
-        inputMov.x = Input.GetAxis("Horizontal");
-        inputMov.y = Input.GetAxis("Vertical");
-        
 
-       
+        X = Input.GetAxis("Horizontal");
+        Y = Input.GetAxis("Vertical");
+         inputMov.x = Input.GetAxis("Horizontal");
+         inputMov.y = Input.GetAxis("Vertical");
+        
+        anim.SetFloat("VelX",X);
+        anim.SetFloat("VelY",Y);
 
         // logica de salto
         if (Input.GetKeyDown(KeyCode.Space) && jumping == false)
@@ -57,6 +65,9 @@ public class PlayerMovement : MonoBehaviour
         {
             isRunning = false;
         }
+
+        
+
     }
 
     private void FixedUpdate()

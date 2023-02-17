@@ -113,9 +113,15 @@ public class CameraInteract : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
-
+        InstanciarObjetos();
     }
 
+    public void InstanciarObjetos()
+    {
+        // fer aixo amb tots els objectes
+        destruirBrazosRobot1 = GameObject.FindGameObjectWithTag("DestruirBrazosRobot1");
+    }
+    
     // Update is called once per frame
     void Update()
     {
