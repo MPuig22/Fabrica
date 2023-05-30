@@ -9,6 +9,46 @@ TagManager:
   - PlataformaMaster
   - PlataformaClient
   - DestruirBrazosRobot1
+  - DestruirBrazosRobot2
+  - DestruirPierna1
+  - DestruirPierna2
+  - DestruirPlato
+  - DestruirCaja
+  - DestruirPuerta
+  - DestruirBrazosRobot1_Client
+  - DestruirBrazosRobot2_Client
+  - DestruirPierna1_Client
+  - DestruirPierna2_Client
+  - DestruirPlato_Client
+  - DestruirCaja_Client
+  - DestruirPuerta_Client
+  - BrazosFinal
+  - PiernaFinal
+  - PlatoFinal
+  - CajaFinal
+  - PuertaFinal
+  - BrazosFinal_Client
+  - PiernaFinal_Client
+  - PlatoFinal_Client
+  - CajaFinal_Client
+  - PuertaFinal_Client
+  - WinMaster_Panel
+  - WinClient_Panel
+  - CajaMicroondas_Master
+  - Brazo1Microondas_Master
+  - Brazo2Microondas_Master
+  - PuertaMicroondas_Master
+  - Pierna1Microondas_Master
+  - Pierna2Microondas_Master
+  - PlatoMicroondas_Master
+  - CajaMicroondas_Client
+  - Brazo1Microondas_Client
+  - Brazo2Microondas_Client
+  - PuertaMicroondas_Client
+  - Pierna1Microondas_Client
+  - Pierna2Microondas_Client
+  - PlatoMicroondas_Client
+  - Timer
   layers:
   - Default
   - TransparentFX

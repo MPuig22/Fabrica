@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1418084459499787401}
   - component: {fileID: 4928464262605278306}
   - component: {fileID: 9206889144663462276}
+  - component: {fileID: 1329327602616527771}
   m_Layer: 0
   m_Name: PiernasMicroondas2_Client
   m_TagString: Untagged
@@ -97,6 +98,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.33111647, y: 0.50544393, z: 1.508275}
   m_Center: {x: -0.468928, y: -0.12263666, z: -0.26258373}
+--- !u!114 &1329327602616527771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347302226266690112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1379764101540024196
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,13 +132,14 @@ GameObject:
   - component: {fileID: 908585523691666365}
   - component: {fileID: 9074681212069253901}
   - component: {fileID: 9206889145408705625}
+  - component: {fileID: 2996696432852610350}
   m_Layer: 0
   m_Name: PiernasMicroondas_Client
-  m_TagString: Untagged
+  m_TagString: PiernaFinal_Client
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6636261334231724536
 Transform:
   m_ObjectHideFlags: 0
@@ -195,6 +219,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.33111647, y: 0.50544393, z: 1.508275}
   m_Center: {x: 0.468928, y: -0.12263666, z: -0.26258373}
+--- !u!114 &2996696432852610350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379764101540024196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &2558556410779528488
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,6 +253,7 @@ GameObject:
   - component: {fileID: 5990977445953375098}
   - component: {fileID: 855253125763518947}
   - component: {fileID: 9206889144342516432}
+  - component: {fileID: 4453252094401681260}
   m_Layer: 0
   m_Name: BrazosMicroondas2_Client
   m_TagString: Untagged
@@ -292,6 +339,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.70257056, y: 0.16120371, z: 0.96335375}
   m_Center: {x: -1.3232387, y: -0.00000047683713, z: 0.7129382}
+--- !u!114 &4453252094401681260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2558556410779528488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &5359332355593296811
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,13 +373,14 @@ GameObject:
   - component: {fileID: 5172890733379559450}
   - component: {fileID: 5671146084360266731}
   - component: {fileID: 9206889145057323867}
+  - component: {fileID: 8038126988822503217}
   m_Layer: 0
   m_Name: puertaMicroondas_Client
-  m_TagString: Untagged
+  m_TagString: PuertaFinal_Client
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8865072602234781578
 Transform:
   m_ObjectHideFlags: 0
@@ -390,6 +460,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.6052314, y: 0.2222665, z: 1.1204118}
   m_Center: {x: 0.19738449, y: -0.5185354, z: 1.0063236}
+--- !u!114 &8038126988822503217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5359332355593296811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &6956178673893244610
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,13 +494,14 @@ GameObject:
   - component: {fileID: 2388574882534249493}
   - component: {fileID: 5644725257800728597}
   - component: {fileID: 9206889145174294551}
+  - component: {fileID: 4802127212993803622}
   m_Layer: 0
   m_Name: PlatitoMicroondas_Client
-  m_TagString: Untagged
+  m_TagString: PlatoFinal_Client
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1439295959508474475
 Transform:
   m_ObjectHideFlags: 0
@@ -487,6 +580,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.661511, y: 0.6785228, z: 0.037935488}
   m_Center: {x: 0.19496231, y: -0.00000047683713, z: 0.60902035}
+--- !u!114 &4802127212993803622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6956178673893244610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &7841880902223466828
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,13 +614,14 @@ GameObject:
   - component: {fileID: 3075786861141054217}
   - component: {fileID: 5125861585066714318}
   - component: {fileID: 9206889145111684869}
+  - component: {fileID: 3994080817269110081}
   m_Layer: 0
   m_Name: CajaMicroondas_Client
-  m_TagString: Untagged
+  m_TagString: CajaFinal_Client
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8412449105769356276
 Transform:
   m_ObjectHideFlags: 0
@@ -584,6 +700,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.0100336, y: 1.0840881, z: 1.1204118}
   m_Center: {x: -0.0050165667, y: -0.013297647, z: 1.0063236}
+--- !u!114 &3994080817269110081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7841880902223466828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &8287776926863909074
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,6 +731,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8669369465837107816}
+  - component: {fileID: 6819186989966562339}
   m_Layer: 0
   m_Name: Microones_Client
   m_TagString: Untagged
@@ -620,6 +759,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &6819186989966562339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8287776926863909074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &8522226690341648648
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,13 +793,14 @@ GameObject:
   - component: {fileID: 1728856641622246419}
   - component: {fileID: 23445505594362684}
   - component: {fileID: 9206889144443148259}
+  - component: {fileID: 6022250057337295226}
   m_Layer: 0
   m_Name: BrazosMicroondas_Client
-  m_TagString: Untagged
+  m_TagString: BrazosFinal_Client
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4432483667081532280
 Transform:
   m_ObjectHideFlags: 0
@@ -718,3 +880,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.70257056, y: 0.16120371, z: 0.96335375}
   m_Center: {x: 1.3232387, y: -0.00000047683713, z: 0.7129382}
+--- !u!114 &6022250057337295226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8522226690341648648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0

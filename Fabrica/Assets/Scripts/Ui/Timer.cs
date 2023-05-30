@@ -6,7 +6,7 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    private float timeDuration = 3f * 60f;
+    private float timeDuration = 5f * 60f;
 
     private float timer;
     [SerializeField] private TextMeshProUGUI firstMinute;
@@ -15,6 +15,8 @@ public class Timer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI firstSecond;
 
     [SerializeField] private TextMeshProUGUI secondSecond;
+
+    public GameObject lose_Panel;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +37,8 @@ public class Timer : MonoBehaviour
             Flash();
         }
 
+       
+
 
 
     }
@@ -51,7 +55,11 @@ public class Timer : MonoBehaviour
     {
         if (timer == 0)
         {
-            SceneManager.LoadScene("GameOver");
+            
+            lose_Panel.gameObject.SetActive(true);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+
         }
 
     }

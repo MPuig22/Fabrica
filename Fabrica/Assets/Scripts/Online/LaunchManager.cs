@@ -17,6 +17,7 @@ public class LaunchManager : MonoBehaviourPunCallbacks
     [SerializeField] private GameObject connectionStatusPanel;
     [SerializeField] private GameObject panel_createOrJoinRoom;
     [SerializeField] private GameObject lobbyRoomPanel;
+    [SerializeField] private GameObject mainMenu_panel;
 
     [SerializeField] private List<GameObject> panel_list = new List<GameObject>();
 
@@ -29,6 +30,8 @@ public class LaunchManager : MonoBehaviourPunCallbacks
     [SerializeField] private Item_info_UsuarioConectado _item_Info_UsuarioConectado;
     
     [SerializeField] private GameObject startGame_btn;
+  
+    
 
     // private variables
    
@@ -45,9 +48,20 @@ public class LaunchManager : MonoBehaviourPunCallbacks
     private void Start()
     {
         OcultarTodosLosPaneles();
-        enterGamePanel.SetActive(true);
+        mainMenu_panel.SetActive(true);
         
-    } 
+    }
+
+    public void SartGameMainMenu()
+    {
+        mainMenu_panel.SetActive(false);
+        enterGamePanel.SetActive(true);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
     
    [PunRPC]
    public void Actualizar_Lista_Usuarios()
@@ -109,6 +123,7 @@ public class LaunchManager : MonoBehaviourPunCallbacks
     public void JoinRandomRoom()
     {
         PhotonNetwork.JoinRandomRoom();
+        
     }
 
     private void CreateAndJoinRoom()

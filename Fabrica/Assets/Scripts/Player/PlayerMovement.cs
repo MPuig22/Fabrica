@@ -20,8 +20,13 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     private bool isRunning;
 
-    private Animator anim;
-    public float X, Y;
+    public AudioSource pasos;
+    public AudioSource salto;
+
+    private bool h_activo;
+    private bool v_activo;
+
+    
 
    
     // Start is called before the first frame update
@@ -30,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
         // Recuperamos el componente Rigidbody del player para poder trabajar con el
         _rigidbody = GetComponent<Rigidbody>();
 
-        anim = GetComponent<Animator>();
+        
 
         
 
@@ -41,25 +46,65 @@ public class PlayerMovement : MonoBehaviour
     {
         // Leemos los inputs para el desplazamiento del jugador
 
-        X = Input.GetAxis("Horizontal");
-        Y = Input.GetAxis("Vertical");
+          
          inputMov.x = Input.GetAxis("Horizontal");
-         inputMov.y = Input.GetAxis("Vertical");
-        
-        anim.SetFloat("VelX",X);
-        anim.SetFloat("VelY",Y);
+        inputMov.y = Input.GetAxis("Vertical");
 
+        if (Input.GetButtonDown("Horizontal"))
+        {
+            if (v_activo == false)
+            {
+                h_activo = true;
+                pasos.Play();  
+            }
+           
+        }
+        if (Input.GetButtonDown("Vertical"))
+        {
+            if (h_activo == false)
+            {
+                v_activo = true;
+                pasos.Play();
+            }
+            
+        }
+        
+        if (Input.GetButtonUp("Horizontal"))
+        {
+            h_activo = true;
+            if (v_activo == false)
+            {
+                pasos.Pause();
+            }
+            
+        }
+        if (Input.GetButtonUp("Vertical"))
+        {
+            v_activo = true;
+            if (h_activo == false)
+            {
+                pasos.Pause();
+            }
+            
+        }
+
+       
+       
+       
+       
         // logica de salto
         if (Input.GetKeyDown(KeyCode.Space) && jumping == false)
         {
             _rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             jumping = true;
+            salto.Play();
         }
 
         //Logica correr
-        if (Input.GetKey(KeyCode.LeftShift))
+       if (Input.GetKey(KeyCode.LeftShift))
         {
-            isRunning = true;
+           isRunning = true;
+           
         }
         else
         {
